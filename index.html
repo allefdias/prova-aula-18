@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Carrinho de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header" style="display: none;">
+        <h1>Cacarecos Store</h1>
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Pesquisar produtos...">
+        </div>
+        <div id="cart-icon-container">
+            <img id="cart-icon" src="./sacolas-de-compras.png" alt="Carrinho de Compras">
+        </div>
+    </header>
+
+    <div id="auth-container">
+        <div id="login-container">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-username">Usuário:</label>
+                <input type="text" id="login-username" required>
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Entrar</button>
+                <p>Não tem uma conta? <a href="#" id="show-register">Cadastre-se</a></p>
+            </form>
+        </div>
+
+        <div id="register-container" style="display:none;">
+            <h2>Cadastro</h2>
+            <form id="register-form">
+                <label for="register-username">Usuário:</label>
+                <input type="text" id="register-username" required>
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" required>
+                <label for="register-password">Senha:</label>
+                <input type="password" id="register-password" required>
+                <button type="submit">Cadastrar</button>
+                <p>Já tem uma conta? <a href="#" id="show-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="shop-container" style="display:none;">
+        <h2>Produtos</h2>
+        <div id="products">
+            <!-- Produtos serão adicionados aqui dinamicamente -->
+        </div>
+    </div>
+
+    <!-- Tela Modal do Carrinho -->
+<div id="cart-modal" style="display: none;">
+    <div id="cart-modal-content">
+        <span id="close-cart-modal" class="close">&times;</span>
+        <h2>Sacola</h2>
+        <ul id="cart">
+            <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
+        </ul>
+        <div id="shipping-calculator">
+            <label for="shipping-zip">Digite o CEP:</label>
+            <input type="text" id="shipping-zip" placeholder="CEP">
+            <button id="calculate-shipping">Calcular Frete</button>
+            <div id="shipping-cost">Frete: R$ 0,00</div>
+            <div id="total-cost">Total com Frete: R$ 0,00</div>
+        </div>
+        <button id="checkout-button">Finalizar Compra</button>
+    </div>
+</div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

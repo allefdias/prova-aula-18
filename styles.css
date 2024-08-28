@@ -1,0 +1,284 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #e6f0ee;
+}
+
+input, button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos do contêiner de login e registro */
+#login-container, #register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos do cabeçalho e da loja */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+    position: relative; /* Permite posicionamento absoluto dos filhos */
+}
+
+#search-input {
+    margin-left: 900px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    max-width: 300px; /* Limita a largura do campo de pesquisa */
+    transition: margin 0.3s; /* Suaviza a transição do margin */
+}
+
+#cart-icon-container {
+    position: relative; /* Permite o uso de position absolute nos filhos */
+    display: flex;
+    align-items: center; /* Alinha verticalmente o ícone */
+    margin-left: 20px; /* Adiciona um espaço fixo à esquerda do ícone */
+}
+
+#cart-icon {
+    width: 40px;
+    height: 40px; /* Define uma altura igual à largura */
+    cursor: pointer;
+    transition: transform 0.3s; /* Transição suave para o hover */
+}
+
+#cart-icon-container:hover #cart-icon {
+    transform: scale(1.5); /* Aumenta o ícone ao passar o mouse */
+    z-index: 1; /* Garante que o ícone esteja acima dos outros elementos */
+}
+
+/* Estilos do contêiner da loja */
+#shop-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente o contêiner */
+    align-items: center; /* Centraliza verticalmente o contêiner */
+    min-height: 100vh; /* Garante que o contêiner ocupe pelo menos 100% da altura da tela */
+    padding: 20px;
+}
+
+/* Estilos dos produtos */
+#products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 90%;
+    padding: 20px;
+    
+}
+
+/* Estilos dos cards de produtos */
+.product {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinha o conteúdo do card */
+    transition: transform 0.3s ease;
+    width: 200px;
+    background-color: #ffffff;
+    margin-left: auto;
+}
+
+.product img {
+    max-width: 80%; /* Limita a largura da imagem */
+    max-height: 200px; /* Limita a altura da imagem */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    display: block; /* Remove o espaço embaixo da imagem */
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.product button {
+    margin-top: auto; /* Garante que o botão fique alinhado no final do card */
+    border-radius: 10px;
+}
+
+.product:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para o modal do carrinho */
+#cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#cart-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#close-cart-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#cart {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-image {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cart-item-title {
+    flex: 1;
+}
+
+.cart-item-quantity {
+    margin-left: 20px;
+}
+
+#cart-total {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#checkout-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-button:hover {
+    background-color: #0056b3;
+}
+
+/* Notificação de sucesso ao adicionar ao carrinho */
+.notification {
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: top 0.5s ease, opacity 0.5s ease;
+    z-index: 1001;
+}
+
+.notification.show {
+    top: 20px;
+    opacity: 1;
+}
+
+.notification.hide {
+    top: -50px;
+    opacity: 0;
+}
+#shipping-calculator {
+    margin-top: 20px;
+}
+
+#shipping-calculator input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 120px); /* Ajusta a largura do input */
+    box-sizing: border-box;
+}
+
+#shipping-calculator button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    width: 100px; /* Ajusta a largura do botão */
+}
+
+#shipping-calculator button:hover {
+    background-color: #0056b3;
+}
+
+#shipping-cost, #total-cost {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
